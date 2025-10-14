@@ -98,27 +98,6 @@ document.addEventListener("click", async (e) => {
   }
 });
 
-// --- GALAXIE ANIMÉE PARALLAXE ---
-const particles = document.querySelector(".particles");
-if (particles) {
-  let x = 0, y = 0;
-  let targetX = 0, targetY = 0;
-
-  document.addEventListener("mousemove", (e) => {
-    const { innerWidth, innerHeight } = window;
-    targetX = (e.clientX / innerWidth - 0.5) * 40;
-    targetY = (e.clientY / innerHeight - 0.5) * 40;
-  });
-
-  function animate() {
-    x += (targetX - x) * 0.05;
-    y += (targetY - y) * 0.05;
-    particles.style.transform = `translate(${x}px, ${y}px)`;
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-}
 
 // --- PARTAGE ---
 document.getElementById("share-btn").addEventListener("click", async () => {
